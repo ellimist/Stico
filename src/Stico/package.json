@@ -1,0 +1,10 @@
+{
+  "name": "Stico",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "resizable": false,
+    "width": 660,
+    "height": 500
+  }
+}
