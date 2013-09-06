@@ -1,0 +1,56 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+
+* {
+	margin:0;
+	padding:0;
+}
+*:focus {
+	outline: none;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+	background: #333;
+	overflow: hidden;
+}
+#app {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#app>.panel {
+	height: 100%;
+	display: inline-block;
+	width: 50%;
+}
+#app>.panel:nth-child(1){
+	background: #EFECCA;
+	float: left;
+}
+#app>.panel:nth-child(2){
+	background: #fff;
+	float: right;
+}
+#app>.separator {
+	position: absolute;
+	width:1px;
+	height: 100%;
+	background: #666;
+	top:0;
+	left:50%;
+}
+.panel>#editor, .panel>#preview {
+	height: 100%;
+}
+.panel>#editor {
+	background: #EFECCA;
+}
+.panel>#editor>textarea, .panel>#preview>iframe {
+	padding: 10px;
+	width: 100%;
+	height: 96.8%;
+	border: 0;
+	background: transparent;
+	font-family: Roboto;
+	font-size: 20px;
+}
