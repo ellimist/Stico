@@ -3,7 +3,7 @@
   "main": "index.html",
   "window": {
     "toolbar": false,
-    "resizable": false,
+    "resizable": true,
     "width": 660,
     "height": 500
   }

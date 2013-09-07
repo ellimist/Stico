@@ -3,10 +3,11 @@
 <head>
 <title>Stico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="lib/core.css"/>
+<script type="text/javascript" src="lib/core.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/app.css"/>
 </head>
 <body>
-<div id="app">
+	<div id="app">
 		<div class="panel">
 			<div id="editor">
 				<textarea id="attacker"></textarea>
@@ -19,8 +20,12 @@
 		</div>
 		<div class="separator"></div>
 	</div>
+	<div id="utils">
+		<input type="file" id="opendlg"/>
+		<input type="file" nwsaveas id="savedlg"/>
+	</div>
 	<script type="text/javascript" src="vendor/jquery.js"></script>
 	<script type="text/javascript" src="vendor/markdown.js"></script>
-	<script type="text/javascript"  src="lib/core.js"></script>
+	<script type="text/javascript"  src="lib/app.js"></script>
 </body>
 </html>
