@@ -23,13 +23,19 @@ function runmd(){
 	doc.close();
 }
 
-$('#attacker').keyboardShortcut({
+$('body').keyboardShortcut({
   bindings: {
     "cmd+s": function() {
     	saveFile();
     },
     "ctrl+s": function() {
     	saveFile();
+    },
+    "cmd+o": function() {
+    	openFile();
+    },
+    "ctrl+o": function() {
+    	openFile();
     }
   }
 });

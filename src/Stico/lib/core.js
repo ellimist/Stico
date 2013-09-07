@@ -16,26 +16,6 @@ file.append(saveAsItem);
 win.menu=menubar;
 win.menu.insert(new gui.MenuItem({ label: 'File', submenu: file}), 1);
 
-/*
-var Menu = new gui.Menu({
-    type:   'menubar'
-});
-var FileMenu = new gui.Menu();
-var openItem=new gui.MenuItem({label: 'Open'});
-var saveItem=new gui.MenuItem({label: 'Save'});
-var saveAsItem=new gui.MenuItem({label: 'Save As'});
-FileMenu.append(openItem);
-FileMenu.append(saveItem);
-FileMenu.append(saveAsItem);
-Menu.append(
-    new gui.MenuItem({
-        label: 'File',
-        submenu: FileMenu
-    })
-);
-win.menu=Menu;
-gui.Window.get().menu = Menu;*/
-
 openItem.click=function(){
   	openFile();
 }
@@ -71,7 +51,9 @@ function openFile() {
  }
 
  function saveFile(){
+ 	if(currentfile!=null)
 	writeFile(currentfile, $("#attacker").val());
+	else saveFileAs();
 }
 function saveFileAs(){
 	var chooser = $("#savedlg");
