@@ -4,6 +4,19 @@ var currentfile=null;
 var gui = require('nw.gui');
 var fs = require('fs');
 
+var win=gui.Window.get();
+var menubar=new gui.Menu({type: 'menubar'});
+var file=new gui.Menu();
+var openItem=new gui.MenuItem({label: 'Open'});
+var saveItem=new gui.MenuItem({label: 'Save'});
+var saveAsItem=new gui.MenuItem({label: 'Save As'});
+file.append(openItem);
+file.append(saveItem);
+file.append(saveAsItem);
+win.menu=menubar;
+win.menu.insert(new gui.MenuItem({ label: 'File', submenu: file}), 1);
+
+/*
 var Menu = new gui.Menu({
     type:   'menubar'
 });
@@ -20,20 +33,21 @@ Menu.append(
         submenu: FileMenu
     })
 );
-gui.Window.get().menu = Menu;
+win.menu=Menu;
+gui.Window.get().menu = Menu;*/
 
 openItem.click=function(){
-  	openFile('#opendlg');
+  	openFile();
 }
 saveAsItem.click=function(){
-	saveFileAs("#savedlg");
+	saveFileAs();
 }
 saveItem.click=function(){
 	saveFile();
 }
 
-function openFile(name) {
-    var chooser = $(name);
+function openFile() {
+    var chooser = $("#opendlg");
     chooser.change(function(evt) {
     	var fileName=$(this).val();
 		fs.exists(fileName, function(exists) {
@@ -59,8 +73,8 @@ function openFile(name) {
  function saveFile(){
 	writeFile(currentfile, $("#attacker").val());
 }
-function saveFileAs(name){
-	var chooser = $(name);
+function saveFileAs(){
+	var chooser = $("#savedlg");
     chooser.change(function(evt) {
     	var fileName=$(this).val();
 		writeFile(fileName, $("#attacker").val());
