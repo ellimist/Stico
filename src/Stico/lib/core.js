@@ -20,6 +20,7 @@ file.append(saveItem);
 file.append(saveAsItem);
 file.append(closeItem);
 
+
 win.menu=menubar;
 win.menu.insert(new gui.MenuItem({ label: 'File', submenu: file}), 1);
 
