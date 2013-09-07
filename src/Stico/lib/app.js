@@ -22,3 +22,14 @@ function runmd(){
 	doc.write(output);
 	doc.close();
 }
+
+$('#attacker').keyboardShortcut({
+  bindings: {
+    "cmd+s": function() {
+    	saveFile();
+    },
+    "ctrl+s": function() {
+    	saveFile();
+    }
+  }
+});
